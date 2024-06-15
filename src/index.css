@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  text-decoration: none;
+
+  box-sizing: border-box;
+  font-family: "Poppins";
+
+  --light-bg-color: rgb(249, 249, 249);
+  --light-body-color: white;
+  --font-size: 16px;
+}
+
+.flex-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+.flex-align-center{
+  display: flex;
+  align-items: center;
+}
+.btn{
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--font-size);
+  padding: 8px 12px;
+}
+.btn-green{
+  background-color: rgb(67, 255, 67);
+}
+.btn-red{
+  background-color: rgb(253, 72, 72);
+}
+.btn-black{
+  background-color: black;
+  color: whitesmoke;
+}
+.btn-clear{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.btn-round{
+  border: 1px solid black;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+html{
+  background-color: var(--light-bg-color);
+}
+body{
+  width: 500px;
+  background-color: var(--light-body-color);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+:root{
+  display: flex;
+  justify-content: center;
+}
+.app{
+  height: 100vh;
+  display: flex;
+}
+
+label{
+  font-size: var(--font-size);
+  color: gray;
+}
+input{
+  border: none;
+  border-bottom: 2px solid gray;
+  padding-left: 4px;
+  font-size: var(--font-size)
+}
+input:focus{
+  outline: none;
+}
+select{
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 24px;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+.form-control{
+  margin-top: 8px;
+}
+
+.container{
+  position: relative;
+  width: 500px;
+}
+.header{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px;
+}
+.border-bottom{
+  border-bottom: 2px solid black;
+}
+.accounts{
+  position: absolute;
+}
+.spent-amount{
+  padding: 80px 0px 80px 0px;
+  font-size: 32px;
+  color: rgb(253, 72, 72);
+}
+.expensesInfo{
+  overflow: auto;
+  height: 200px;
+  width: 100%;
+  padding: 12px;
+  gap: 16px;
+  box-shadow: 0px 0px 24px 5px rgba(0,0,0,0.10);
+  border-radius: 25px;
+
+  scrollbar-width: none;
+}
+.expensesInfo::-webkit-scrollbar{
+  display: none;
+}
+.record{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.l-side{
+  gap: 12px
+}
+.r-side{
+  color: rgb(253, 72, 72);
+}
+
+.wrapper{
+  position: absolute;
+  width: 105%;
+  height: 100vh;
+  backdrop-filter: blur(4px);
+  overflow: hidden;
+}
+.wrapper-enter-active{
+  animation: show-from-buttom .5s forwards;
+}
+.wrapper-exit-active{
+  animation: show-from-buttom .5s reverse;
+}
+@keyframes show-from-buttom{
+  0%{
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+.select-tag-wrapper{
+  position: absolute;
+  width: 500px;
+  height: 55vh;
+  background-color: white;
+  bottom: 0;
+}
+
+.created-user-tags{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+.tag-container{
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.select-tag-wrapper-enter-active{
+  animation: show-from-left .5s forwards;
+}
+.select-tag-wrapper-exit-active{
+  animation: show-from-left .5s reverse;
+}
+@keyframes show-from-left{
+  0%{
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+.rectangle{
+  position: relative;
+  height: 26px;
+  width: 167px;
+  padding-left: 4px;
+  border-bottom: 2px solid gray;
+  cursor: pointer;
+  margin-top: 16px;
+}
+.square{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+  left: 12px;
+  top: 28px;
+  transform: rotate(45deg);
+}
+.dropdown-list{
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  overflow: auto;
+  padding: 8px;
+  box-shadow: 0px 0px 22px -2px rgba(0,0,0,0.59);
+  scrollbar-width: none;
+}
+.dropdown-list::-webkit-scrollbar{
+  display: none;
+}
+.dropdown-list-enter-active{
+  animation: show-dropdown .5s forwards;
+}
+.dropdown-list-exit-active{
+  animation: show-dropdown .5s reverse;
+}
+@keyframes show-dropdown{
+  0%{
+    height: 0px;
+  }
+  100%{
+    height: 120px;
+  }
+}
+
+.right-form{
+  margin-left: auto;
+  width: 100px;
+  margin-right: 10px;
+  margin-top: 12px;
+}
